@@ -2,7 +2,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  color: #0a0a23;
   font-family: "Flexo-Medium";
 
 
@@ -34,8 +33,9 @@ body{
 .buffer
 {
   border-color: white;
-  border-style: double;
-  background-color: rgba(255, 255, 255, 0);
+  border-style: outset;
+
+  background-color: rgba(0, 0, 0, 0.5);
   height: 20%;
   width: 50%;
   display: flex;
@@ -60,6 +60,7 @@ body{
   color: white;
   font-size: 40px;
 }
+
 form
 {
   width: 100%;
@@ -72,7 +73,18 @@ form
 {
   width: 70%;
   height: 30px;
+  color: white;
   border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: white;
+  border-style: outset;
+
+  border-style: 2px;
+}
+::placeholder
+{
+  font-style: bold;
+  color: white;
 }
 #search-button
 {
@@ -104,12 +116,14 @@ form
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 55%; /* Could be more or less, depending on screen size */
+  width: 40%; /* Could be more or less, depending on screen size */
   border-radius: 30px;
   border-style: outset;
   border-width: 5px;
-  border-color: #333;
+  border-color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 #close {
   color: red;
@@ -144,6 +158,25 @@ form{
   display: flex;
   flex-direction: column;
   height: 20%;
+  font-size: 24px;
+  
+}
+.stats_table
+{
+  margin-top: 30px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.stats_table table, th, td
+{
+  border-collapse: collapse;
+  border: 1px white solid; 
+  padding: 15px; 
+}
+.stats_table table
+{
   width: 100%;
 }
 .first-section
@@ -162,22 +195,10 @@ form{
   width: 100%;
   margin-bottom: 30px;
 }
-#sprite_container_front
+#sprite_container_front, #sprite_container_back
 {
   border-radius: 10px;
   margin-right: 5px;
-  box-sizing: border-box;
-  background-color:#F2F2F2 ;
-  min-width: 230px;
-  min-height: auto;
-  border-style: outset;
-  border-width: 2px;
-  border-color: #333;
-}
-#sprite_container_back
-{
-  border-radius: 10px;
-  margin-left: 5px;
   box-sizing: border-box;
   background-color:#F2F2F2 ;
   min-width: 230px;
@@ -208,6 +229,10 @@ form{
   text-transform: uppercase;
   font-family: "Flexo-Medium";
 
+}
+.total
+{
+  font-style: bold;
 }
 .normal {
     background-color: #b7b7aa;
@@ -280,3 +305,50 @@ form{
   .fairy {
     background-color: #ed99ed;
   }
+
+@media(max-width : 670px)
+{
+  .buffer
+  {
+    width: 80%;
+  }
+  .input h1{
+    font-size: 28px;
+  }
+  .output-content
+  {
+    width: 80%;
+  }
+  .name_and_id
+  {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+  #sprites
+  {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .buffer
+  {
+    width: 80%;
+  }
+  .input h1{
+    font-size: 32px;
+  }
+  .output-content
+  {
+    width: 80%;
+  }
+  .name_and_id
+  {
+    font-size: 32px;
+    margin-top: 30px;
+  }
+  #sprites
+  {
+    gap: 20px;
+  }
+}
